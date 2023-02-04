@@ -6,7 +6,7 @@ public void setup()
 {
   size(600, 600);
   frameRate(20);
-  background(#6E7176);
+  background(0);
 }
 public void draw()
 {
