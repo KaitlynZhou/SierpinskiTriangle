@@ -6,7 +6,7 @@ public void setup()
 }
 public void draw()
 {
-  translate(250,250);
+  translate(300,300);
   rotate(PI/3.0);
   sierpinski(0, 0, 500);
   rotate(PI/3.0);
