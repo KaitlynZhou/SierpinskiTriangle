@@ -6,6 +6,7 @@ public void setup()
 }
 public void draw()
 {
+  rotate(PI/4);
   sierpinski(0, 250, 500);
 }
 public void mouseDragged()//optional
