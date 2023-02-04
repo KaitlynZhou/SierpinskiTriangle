@@ -15,10 +15,6 @@ public void draw()
   sierpinski(0, 0, 500);
   rotate(PI/2.0);
   sierpinski(0, 0, 500);
-  rotate(PI/2.0);
-  sierpinski(0, 0, 500);
-  rotate(PI/2.0);
-  sierpinski(0, 0, 500);
 }
 public void mouseDragged()//optional
 {
