@@ -1,6 +1,7 @@
 public void setup()
 {
   size(600, 600);
+  background(0);
 }
 public void draw()
 {
@@ -19,7 +20,7 @@ public void sierpinski(float x, float y, int len)
     //sierpinski(x,y,len/2);
     //sierpinski(x+len/2,y,len/2);
     //sierpinski(x+len/4,y-len/2,len/2);
-    //fill((int)(Math.random()*255),0,0);
+    fill((int)(Math.random()*255),0,0);
     //------------tile pattern-----------------
     sierpinski(x,y,len/2);
     sierpinski(x+len/2,y,len/2);
