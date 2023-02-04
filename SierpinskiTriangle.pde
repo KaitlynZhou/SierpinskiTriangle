@@ -7,13 +7,13 @@ public void setup()
 public void draw()
 {
   translate(300,300);
-  rotate(PI/2.0);
+  rotate(2*PI/5.0);
   sierpinski(0, 0, 500);
-  rotate(PI/2.0);
+  rotate(2*PI/5.0);
   sierpinski(0, 0, 500);
-  rotate(PI/2.0);
+  rotate(2*PI/5.0);
   sierpinski(0, 0, 500);
-  rotate(PI/2.0);
+  rotate(2*PI/5.0);
   sierpinski(0, 0, 500);
 }
 public void mouseDragged()//optional
