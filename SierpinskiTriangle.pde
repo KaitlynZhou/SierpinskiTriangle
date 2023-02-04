@@ -1,44 +1,71 @@
+float leng = 50;
+boolean stopLoop = true;
+float rot = 1;
+color c = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
 public void setup()
 {
   size(600, 600);
-  frameRate(10);
-  background(0);
+  frameRate(20);
+  background(#6E7176);
 }
 public void draw()
 {
-  translate(300,300);
+  if (leng <= 1000 && stopLoop == false)
+  {
+    leng = leng + 2.5;
+  } else if (leng >= 1000)
+  {
+    leng = 50;
+  }
+  translate(300, 300);
   rotate(-PI/2.0);
-  sierpinski(0, 0, 300);
-  rotate(2*PI/5.0);
-  sierpinski(0, 0, 300);
-  rotate(2*PI/5.0);
-  sierpinski(0, 0, 300);
-  rotate(2*PI/5.0);
-  sierpinski(0, 0, 300);
-  rotate(2*PI/5.0);
-  sierpinski(0, 0, 300);
+  sierpinski(0, 0, leng);
+  rotate(2*PI/5.0 * rot);
+  sierpinski(0, 0, leng);
+  rotate(2*PI/5.0 * rot);
+  sierpinski(0, 0, leng);
+  rotate(2*PI/5.0 * rot);
+  sierpinski(0, 0, leng);
+  rotate(2*PI/5.0 * rot);
+  sierpinski(0, 0, leng);
+  loop();
 }
-public void mouseDragged()//optional
+public void mouseClicked()//optional
 {
+  stopLoop = true;
 }
-public void sierpinski(float x, float y, int len) 
+public void keyPressed() {
+  c = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+  if (key == ' ' && stopLoop == true) {
+    stopLoop = false;
+  }
+
+  leng = -leng;
+  rot = - rot;
+  //stopLoop = true;
+}
+public int increment(int increase) {
+  increase+=10;
+  return increase;
+}
+public void sierpinski(float x, float y, float len) 
 {
   //draw a triangle
   //triangle(x,y,x+len/2,y-len,x+len,y);
+  fill(c, (int)(Math.random()*255), (int)(Math.random()*255));
   quad(x, y, x+len/2, y-len/4, x+len, y, x+len/2, y+len/4);
-  if(len>30)
+  if (len>30)
   {
     //sierpinski(x,y,len/2);
     //sierpinski(x+len/2,y,len/2);
     //sierpinski(x+len/4,y-len/2,len/2);
-    fill((int)(Math.random()*255),0,0);
     //------------tile pattern-----------------
-    sierpinski(x,y,len/2);
-    sierpinski(x+len/2,y,len/2);
-    sierpinski(x+len/4,y-len/8,len/4);
-    sierpinski(x+len/2,y-len/8,len/4);
-    sierpinski(x+len/4,y+len/8,len/4);
-    sierpinski(x+len/2,y+len/8,len/4);
+    sierpinski(x, y, len/2);
+    sierpinski(x+len/2, y, len/2);
+    sierpinski(x+len/4, y-len/8, len/4);
+    sierpinski(x+len/2, y-len/8, len/4);
+    sierpinski(x+len/4, y+len/8, len/4);
+    sierpinski(x+len/2, y+len/8, len/4);
     //-------------carpet--------------
     //sierpinski(x+len/4,y,len/2);
     //sierpinski(x,y,len/4);
@@ -46,6 +73,5 @@ public void sierpinski(float x, float y, int len)
     //sierpinski(x+len*0.375,y-len*0.1875,len/4);
     //sierpinski(x+len*0.375,y+len*0.1875,len/4);
     //---------horizontal-------------
-    
   }
 }
