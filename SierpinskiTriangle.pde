@@ -1,6 +1,6 @@
 public void setup()
 {
-  size(400, 400);
+  size(600, 600);
 }
 public void draw()
 {
@@ -14,7 +14,7 @@ public void sierpinski(float x, float y, int len)
   //draw a triangle
   //triangle(x,y,x+len/2,y-len,x+len,y);
   quad(x, y, x+len/2, y-len/4, x+len, y, x+len/2, y+len/4);
-  if(len>60)
+  if(len>30)
   {
     //sierpinski(x,y,len/2);
     //sierpinski(x+len/2,y,len/2);
