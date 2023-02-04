@@ -13,6 +13,12 @@ public void draw()
   sierpinski(0, 0, 500);
   rotate(PI/3.0);
   sierpinski(0, 0, 500);
+  rotate(PI/3.0);
+  sierpinski(0, 0, 500);
+  rotate(PI/3.0);
+  sierpinski(0, 0, 500);
+  rotate(PI/3.0);
+  sierpinski(0, 0, 500);
 }
 public void mouseDragged()//optional
 {
