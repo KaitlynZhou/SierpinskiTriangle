@@ -23,8 +23,8 @@ public void sierpinski(float x, float y, int len)
     //------------tile pattern-----------------
     sierpinski(x,y,len/2);
     sierpinski(x+len/2,y,len/2);
-    sierpinski(x+len/4,y-len/8,len/2);
-    sierpinski(x+len/4,y+len/8,len/2);
+    sierpinski(x+len/4,y-len/8,len/3);
+    sierpinski(x+len/4,y+len/8,len/3);
     //-------------carpet--------------
     //sierpinski(x+len/4,y,len/2);
     //sierpinski(x,y,len/4);
